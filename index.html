@@ -103,9 +103,15 @@
         </div>
     </div>
     <script>
-        // JavaScript function to show the modal
+         // JavaScript function to show the modal only if it hasn't been shown before
         function showModal() {
-            document.getElementById("myModal").style.display = "flex";
+            // Check if the modal has been shown before
+            if (!localStorage.getItem("modalShown")) {
+                // Show the modal
+                document.getElementById("myModal").style.display = "flex";
+                // Set a flag in local storage to indicate that the modal has been shown
+                localStorage.setItem("modalShown", true);
+            }
         }
 
         // JavaScript function to close the modal
